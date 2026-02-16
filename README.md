@@ -29,7 +29,7 @@ The environment follows strict UVM methodology separation:
 
 ## Environment Diagram
 
-![CPM UVM Environment](docs/Env.png)
+![CPM UVM Environment](Doc/Env.png)
 
 ---
 
