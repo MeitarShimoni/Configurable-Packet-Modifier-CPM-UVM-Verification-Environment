@@ -10,6 +10,12 @@ The entire verification environment was architected and implemented from scratch
 
 ---
 
+## Environment Diagram
+
+![CPM UVM Environment](Doc/Env.png)
+
+---
+
 ## Verification Architecture
 
 The environment follows strict UVM methodology separation:
@@ -24,12 +30,6 @@ The environment follows strict UVM methodology separation:
 - Deterministic latency modeling
 - Strict in-order checking
 - Constrained-random stimulus
-
----
-
-## Environment Diagram
-
-![CPM UVM Environment](Doc/Env.png)
 
 ---
 
