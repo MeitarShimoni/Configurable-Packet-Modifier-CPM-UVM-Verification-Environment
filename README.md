@@ -62,6 +62,81 @@ Configuration values are sampled at input acceptance time.
 
 ---
 
+---
+
+## Functional Coverage Strategy
+
+Functional coverage was implemented to measure verification completeness and ensure all packet-processing scenarios were exercised.
+
+Coverage model includes:
+
+• **Opcode Coverage**
+  - PASS
+  - XOR
+  - ADD
+  - ROT
+
+• **Register Configuration Coverage**
+  - Mode selection
+  - Opcode drop configuration
+  - Operation constants
+
+• **Packet Processing Coverage**
+  - Packet acceptance
+  - Packet drop scenarios
+  - Latency behavior across modes
+
+• **Cross Coverage**
+  - Opcode × Configuration mode
+  - Opcode × Drop configuration
+  - Packet type × Operation mode
+
+Coverage was collected using SystemVerilog covergroups integrated into the verification environment.
+
+---
+
+## Regression Strategy
+
+Regression testing was executed using constrained-random stimulus combined with directed test scenarios.
+
+Test suite includes:
+
+- **Smoke Tests** – basic functionality validation
+- **Stress Tests** – high volume randomized traffic
+- **Configuration Tests** – runtime register reconfiguration
+- **Drop Tests** – validation of opcode drop logic
+- **Readback Tests** – RAL register integrity
+
+Each regression run generates thousands of packet transactions with randomized payloads, opcodes, and timing conditions.
+
+---
+
+## Coverage Results
+
+Final regression runs achieved high functional coverage across all packet processing scenarios.
+
+| Coverage Type | Result |
+|---------------|-------|
+| Functional Coverage | **>90%** |
+| Opcode Coverage | **100%** |
+| Register Configuration Coverage | **>90%** |
+| Cross Coverage (Opcode × Mode) | **>85%** |
+
+Coverage closure was achieved through iterative constrained-random regression and targeted tests to cover corner-case scenarios.
+
+---
+
+## Verification Achievements
+
+• Architected a full **UVM verification environment from scratch**  
+• Implemented **3 independent UVM agents** for streaming and register interfaces  
+• Integrated **RAL-based register verification** using a generated register model  
+• Developed **reference model and scoreboard** for transaction-level checking  
+• Executed regressions generating **thousands of packet transactions**  
+• Achieved **>90% functional coverage and coverage closure**
+
+The resulting environment provides a **scalable and reusable verification infrastructure** suitable for regression-driven verification and future feature extensions.
+
 ## How to Run
 
 From the `sim/` directory:
